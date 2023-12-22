@@ -1,0 +1,82 @@
+body {
+    background-color:navy;
+}
+*{
+    overflow-x: hidden;
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size: 18px;
+        background-color: royalblue;
+    }
+    nav{
+        flex-direction: column;
+        font-size: 14px;
+    }
+    nav ul li{
+        margin: 5px 13px;
+    }
+    nav ul{
+        justify-content: center;
+    }
+    .container{
+        max-width: 95vw; 
+    }
+    .container form input[type='number'],select,label{
+        width: 85vw;
+    }
+    .clock{
+        display: none;
+    }
+}
+.clock{
+    background-color: #dadada;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    width: 55%;   
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+
+
+
+#clockContainer{  
+    position: relative;
+    margin: auto;
+    height: 10vw;
+    width: 10vw; 
+    background: url(clock.png) no-repeat;
+    background-size: 100%;
+    color:aliceblue;
+}
+
+#hour, #minute, #second{
+    position: absolute;
+    background: black;
+    border-radius: 10px; 
+    transform-origin: bottom;
+}
+#hour{
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;  
+}
+#minute{
+    width: 1.6%;
+    height: 30%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;  
+}
+#second{
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8; 
+    
+} 
