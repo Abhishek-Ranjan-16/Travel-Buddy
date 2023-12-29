@@ -2,8 +2,8 @@ body {
     background:linear-gradient(40deg,var(--sec_color),black);
 }
 *{
-    border-radius: 20px;
-    overflow-x: hidden;
+    border-radius: 10px;
+    overflow-x: hidden; 
 }
 :root{
     --pri_color:navy;
