@@ -20,7 +20,9 @@
             display: flex;
             font-size: 20px;
             background-color: beige;
-            padding: 23px;
+            padding: 23px; 
+            width: 85%;
+            margin: auto;
         }
 
         nav li a {
@@ -202,22 +204,21 @@
                 conversion experience. We strive to make international transactions and travel currency management
                 hassle-free.
             </h5>
-            <h2>
-                Live Exchange Rates:
-            </h2>
-            <h5>
-                Explore real-time exchange rates for major currencies. Our rates are updated regularly to ensure
-                accuracy
-                and reliability.
-            </h5>
-            <h2>
-                User-Friendly Interface:
-            </h2>
-            <h5>
-                Enjoy the simplicity of our user interface. Convert currencies effortlessly with just a few clicks. Try
-                it
-                now!
-            </h5>
+            <div class="container-date">
+                <div class="left">
+                    <div id="date">
+                        14
+                    </div>
+                </div>
+                <div class="right">
+                    <div id="week">
+                        Thursday
+                    </div>
+                    <div id="month-year">
+                        January 2024
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -225,6 +226,20 @@
         Copyright &copy; All rights reserved
     </footer>
     <script src="myfriend.js"></script>
+    <script>
+        const now = new Date();
+
+        const daysOfWeek = [
+            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+        ];
+        const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ 
+        const dayOfWeek = daysOfWeek[now.getDay()];  
+        document.getElementById("week").innerHTML = dayOfWeek
+        document.getElementById("date").innerHTML = now.getDate()
+        document.getElementById("month-year").innerText =
+       `${month[now.getMonth()]}, ${now.getFullYear()}` 
+    </script>
 </body>
 
 </html>
