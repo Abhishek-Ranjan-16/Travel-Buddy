@@ -1,244 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Buddy</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Poppins:wght@600&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Poppins:wght@600&display=swap");
 
-        * {
-            margin: 0; 
-        }
+      * {
+        margin: 0;
+      }
 
-        nav {
-            font-family: 'Noto Sans', sans-serif;
-            font-weight: 900;
-            display: flex;
-            font-size: 20px;
-            background-color: beige;
-            padding: 23px; 
-            width: 85%;
-            margin: auto;
-        }
+      nav {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 900;
+        display: flex;
+        font-size: 20px;
+        background-color: beige;
+        padding: 23px;
+        width: 85%;
+        margin: auto;
+      }
 
-        nav li a {
-            text-decoration: none;
-            color: navy;
-            transition: all;
-            transition-duration: 500ms;
-        }
+      nav li a {
+        text-decoration: none;
+        color: navy;
+        transition: all;
+        transition-duration: 500ms;
+      }
 
-        nav li a:hover {
-            text-decoration: none;
-            color: rgb(196, 137, 49);
+      nav li a:hover {
+        text-decoration: none;
+        color: rgb(196, 137, 49);
+      }
 
-        }
+      div.logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 23px;
+      }
 
-        div.logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 23px;
-        }
+      nav ul li {
+        list-style: none;
+        padding: 5px 20px;
+        margin: 25px 10px;
+        border: 2px solid black;
+      }
 
-        nav ul li {
-            list-style: none;
-            margin: 23px 23px;
-        }
+      nav ul {
+        display: flex;
+      }
 
-        nav ul {
-            display: flex;
-        }
+      .container {
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+        max-width: 80vw;
+        background-color: rgb(209, 218, 243);
+        margin: auto;
+        display: flex;
+        overflow: auto;
+        height: 70vh;
+      }
 
-        .container {
+      .container h1,
+      h2 {
+        margin: 10px 23px;
+      }
 
-            min-height: 100vh;
-            font-family: 'Poppins', sans-serif;
-            max-width: 80vw;
-            background-color: rgb(209, 218, 243);
-            margin: auto;
-            display: flex;
-            overflow: auto;
-            height: 70vh;
-        }
+      .container form {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+      }
 
-        .container h1,
-        h2 {
-            margin: 10px 23px;
-        }
+      .container form label {
+        margin: 10px;
+        font-size: 25px;
+      }
 
-        .container form {
-            margin: 10px;
-            display: flex;
-            flex-direction: column;
-        }
+      .container form input[type="number"],
+      select {
+        margin: 10px;
+        width: 23vw;
+        background-color: rgb(219, 215, 245);
+        font-size: 25px;
+        margin-bottom: 23px;
+      }
 
-        .container form label {
-            margin: 10px;
-            font-size: 25px;
-        }
+      .btn {
+        margin: 10px;
+        width: 144px;
+        padding: 5px 8px;
+        font-size: 20px;
+        font-weight: 800;
+        background-color: beige;
+        color: rgb(63, 36, 125);
+        border-radius: 13px;
+        cursor: pointer;
+        transition-timing-function: ease;
+        transition-duration: 1000ms;
+      }
 
-        .container form input[type='number'],
-        select {
-            margin: 10px;
-            width: 23vw;
-            background-color: rgb(219, 215, 245);
-            font-size: 25px;
-            margin-bottom: 23px;
-        }
+      .btn:hover {
+        color: white;
+        background-color: navy;
+        border-color: aliceblue;
+        border-radius: 10px;
+        border-width: 10px;
+      }
 
-        .btn {
-            margin: 10px;
-            width: 144px;
-            padding: 5px 8px;
-            font-size: 20px;
-            font-weight: 800;
-            background-color: beige;
-            color: rgb(63, 36, 125);
-            border-radius: 13px;
-            cursor: pointer;
-            transition-timing-function: ease;
-            transition-duration: 1000ms;
-        }
+      div.output table {
+        margin: 10px 23px;
+        width: 30vw;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        border: 2px solid black;
+        font-size: 15px;
+        overflow: auto;
+      }
 
-        .btn:hover {
-            color: white;
-            background-color: navy;
-            border-color: aliceblue;
-            border-radius: 10px;
-            border-width: 10px;
-        }
+      div.output table thead th {
+        font-size: 20px;
+      }
 
-        div.output table {
-            margin: 10px 23px;
-            width: 30vw;
-            background-color: rgb(255, 255, 255);
-            text-align: center;
-            border: 2px solid black;
-            font-size: 15px;
-            overflow: auto;
-        }
+      .output {
+        display: none;
+      }
 
-        div.output table thead th {
-            font-size: 20px
-        }
+      .output table th {
+        padding: 23px;
+      }
 
-        .output {
-            display: none;
-        }
-
-        .output table th {
-            padding: 23px;
-        }
-
-        footer {
-            text-align: center;
-        }
+      footer {
+        text-align: center;
+      }
     </style>
-    <link rel="shortcut icon" href="dollar.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="dollar.ico" type="image/x-icon" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <nav>
-        <div class="logo">
-            <img src="currency.svg" alt="" srcset="" width="300" height="90">
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="https://assassinofsilchar.github.io/Portfolio/">About Us</a></li>
-            <li><a href="mailto:abhiran14082002@gmail.com">Contact</a></li>
-        </ul>
+      <div class="logo">
+        <img src="currency.svg" alt="" srcset="" width="300" height="90" />
+      </div>
+      <ul style="font-size: medium; width: max-content">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://github.com/Abhishek-Ranjan-16">Calculator</a></li>
+        <li>
+          <a href="https://abhishek-ranjan-16.github.io/rpg/"
+            >Password Generator</a
+          >
+        </li>
+        <li>
+          <a href="https://front-end-passop.vercel.app/"
+            >Local Password Manager</a
+          >
+        </li>
+        <li><a href="https://todo-frontend-ochre.vercel.app/">Todo List</a></li>
+        <li>
+          <a href="https://abhishek-ranjan-16.github.io/Portfolio/">About Us</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/2112016-ranjan/">Contact</a>
+        </li>
+        <!-- <li><a href="mailto:abhiran14082002@gmail.com">Contact</a></li> -->
+      </ul>
     </nav>
     <div class="container">
-        <div class="currency">
-            <h1 align="left">Choose a currency</h1>
-            <form action="/action.php" method="get">
-                <label for="quantity">Choose a quantity : </label>
-                <input type="number" name="amount" min="1" max="10" id="quantity">
-                <label for="currency">Choose a currency : </label>
-                <select name="paisa" id="currency" style="font-size: 25px;">
-                    <option value="INR">Indian Rupee</option>
-                    <option value="USD">US Dollar</option>
-                    <option value="EUR">Euro</option>
-                </select>
-                <button class="btn" type="submit">Submit</button>
-            </form>
-            <div class="output">
-                <h2>Here is your converted values in different currencies</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Currency</th>
-                            <th>Code</th>
-                            <th>Value</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-
-                </table>
-            </div>
+      <div class="currency">
+        <h1 align="left">Choose a currency</h1>
+        <form action="/action.php" method="get">
+          <label for="quantity">Choose a quantity : </label>
+          <input type="number" name="amount" min="1" max="10" id="quantity" />
+          <label for="currency">Choose a currency : </label>
+          <select name="paisa" id="currency" style="font-size: 25px">
+            <option value="INR">Indian Rupee</option>
+            <option value="USD">US Dollar</option>
+            <option value="EUR">Euro</option>
+          </select>
+          <button class="btn" type="submit">Submit</button>
+        </form>
+        <div class="output">
+          <h2>Here is your converted values in different currencies</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Code</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
-        <div class="clock">
-            <div id="clockContainer">
-                <div id="hour"></div>
-                <div id="minute"></div>
-                <div id="second"></div>
-            </div>
-            <h1>Welcome to Travel Buddy</h1>
-            <h5>
-                At Travel Buddy, we make currency conversion a breeze. Our live exchange rates, user-friendly
-                interface, and commitment to accuracy set us apart. Try it now and experience seamless currency
-                conversion
-                at your fingertips.
-            </h5>
-            <h2> Our Mission:</h2>
-            <h5>
-                At Travel Buddy, our mission is to provide users with a reliable and efficient currency
-                conversion experience. We strive to make international transactions and travel currency management
-                hassle-free.
-            </h5>
-            <div class="container-date">
-                <div class="left">
-                    <div id="date">
-                        14
-                    </div>
-                </div>
-                <div class="right">
-                    <div id="week">
-                        Thursday
-                    </div>
-                    <div id="month-year">
-                        January 2024
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="clock">
+        <div id="clockContainer">
+          <div id="hour"></div>
+          <div id="minute"></div>
+          <div id="second"></div>
         </div>
+        <h1>Welcome to Travel Buddy</h1>
+        <h5>
+          At Travel Buddy, we make currency conversion a breeze. Our live
+          exchange rates, user-friendly interface, and commitment to accuracy
+          set us apart. Try it now and experience seamless currency conversion
+          at your fingertips.
+        </h5>
+        <h2>Our Mission:</h2>
+        <h5>
+          At Travel Buddy, our mission is to provide users with a reliable and
+          efficient currency conversion experience. We strive to make
+          international transactions and travel currency management hassle-free.
+        </h5>
+        <div class="container-date">
+          <div class="left">
+            <div id="date">14</div>
+          </div>
+          <div class="right">
+            <div id="week">Thursday</div>
+            <div id="month-year">January 2024</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <footer style="padding: 20px; color: white; font-size: larger; font-weight: 600;">
-        Copyright &copy; All rights reserved
+    <footer
+      style="padding: 20px; color: white; font-size: larger; font-weight: 600"
+    >
+      Copyright &copy; All rights reserved
     </footer>
     <script src="myfriend.js"></script>
     <script>
-        const now = new Date();
+      const now = new Date();
 
-        const daysOfWeek = [
-            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
-        ];
-        const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
- 
-        const dayOfWeek = daysOfWeek[now.getDay()];  
-        document.getElementById("week").innerHTML = dayOfWeek
-        document.getElementById("date").innerHTML = now.getDate()
-        document.getElementById("month-year").innerText =
-       `${month[now.getMonth()]}, ${now.getFullYear()}` 
+      const daysOfWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      const month = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      const dayOfWeek = daysOfWeek[now.getDay()];
+      document.getElementById("week").innerHTML = dayOfWeek;
+      document.getElementById("date").innerHTML = now.getDate();
+      document.getElementById("month-year").innerText = `${
+        month[now.getMonth()]
+      }, ${now.getFullYear()}`;
     </script>
-</body>
-
+  </body>
 </html>
