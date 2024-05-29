@@ -1,3 +1,136 @@
+/* This is for currency convertor part */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Poppins:wght@600&display=swap");
+
+* {
+  margin: 0;
+}
+
+nav {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 900;
+  display: flex;
+  font-size: 20px;
+  background-color: beige;
+  padding: 23px;
+  width: 85%;
+  margin: auto;
+}
+
+nav li a {
+  text-decoration: none;
+  color: navy;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+nav li a:hover {
+  text-decoration: none;
+  color: rgb(196, 137, 49);
+}
+
+div.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 23px;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 5px 20px;
+  margin: 25px 10px;
+  border: 2px solid black;
+}
+
+nav ul {
+  display: flex;
+}
+
+.container {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  max-width: 80vw;
+  background-color: rgb(209, 218, 243);
+  margin: auto;
+  display: flex;
+  overflow: auto;
+  height: 70vh;
+}
+
+.container h1,
+h2 {
+  margin: 10px 23px;
+}
+
+.container form {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container form label {
+  margin: 10px;
+  font-size: 25px;
+}
+
+.container form input[type="number"],
+select {
+  margin: 10px;
+  width: 23vw;
+  background-color: rgb(219, 215, 245);
+  font-size: 25px;
+  margin-bottom: 23px;
+}
+
+.btn {
+  margin: 10px;
+  width: 144px;
+  padding: 5px 8px;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: beige;
+  color: rgb(63, 36, 125);
+  border-radius: 13px;
+  cursor: pointer;
+  transition-timing-function: ease;
+  transition-duration: 1000ms;
+}
+
+.btn:hover {
+  color: white;
+  background-color: navy;
+  border-color: aliceblue;
+  border-radius: 10px;
+  border-width: 10px;
+}
+
+div.output table {
+  margin: 10px 23px;
+  width: 30vw;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  border: 2px solid black;
+  font-size: 15px;
+  overflow: auto;
+}
+
+div.output table thead th {
+  font-size: 20px;
+}
+
+.output {
+  display: none;
+}
+
+.output table th {
+  padding: 23px;
+}
+
+footer {
+  text-align: center;
+}
+
+/* Background is made ready over here */
 body {
   background: linear-gradient(40deg, var(--sec_color), black, var(--sec_color));
 }
@@ -36,6 +169,8 @@ body {
     display: none;
   }
 }
+
+/* Analog Clock Part */
 .clock {
   background-color: #dadada;
   margin: 10px 10px;
@@ -86,6 +221,7 @@ body {
   opacity: 0.8;
 }
 
+/* Date Part */
 .container-date {
   display: flex;
   align-items: center;
